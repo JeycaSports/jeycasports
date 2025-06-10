@@ -1,0 +1,388 @@
+.navbar {
+  background-color: transparent !important;
+  transition: background-color 0.3s ease-in-out;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1050;
+
+  &.bg-dark {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+  }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+
+    span {
+      color: white;
+      font-size: 22px;
+    }
+  }
+
+  .navbar-toggler {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    cursor: pointer;
+    display: block;
+
+    &-icon {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFBF66' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      width: 30px;
+      height: 22px;
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+
+  .navbar-nav {
+    display: none;
+
+    @media (min-width: 992px) {
+      display: flex !important;
+      gap: 1.5rem;
+      align-items: center;
+      margin-bottom: 0;
+
+      li.nav-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .nav-link {
+    color: white !important;
+    font-size: 1rem;
+
+    &:hover {
+      color: #FFBF66 !important;
+    }
+
+    &.disabled {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+  }
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  font-size: 1.5rem;
+  background-color: #FFBF66;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:hover {
+    background-color: white;
+    color: #FFBF66;
+  }
+
+  &.hide {
+    display: none !important;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 320px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 1.5rem;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.7);
+  transition: right 0.3s ease;
+  z-index: 1100;
+  overflow-y: auto;
+
+  &.sidenav-open {
+    right: 0;
+    width: 100vw;
+  }
+
+  @media (min-width: 992px) {
+    display: none !important;
+  }
+
+  .btn-close {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 0;
+    line-height: 1;
+  }
+
+  ul.navbar-nav {
+    padding-left: 0;
+
+    li.nav-item {
+      margin-bottom: 1rem;
+
+      a.nav-link {
+        color: white !important;
+        font-size: 1.1rem;
+
+        &:hover {
+          color: #FFBF66 !important;
+        }
+      }
+    }
+  }
+
+  form.d-flex {
+    margin-top: 2rem;
+
+    input.form-control {
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    button.btn-outline-light {
+      border-color: #FFBF66;
+      color: #FFBF66;
+
+      &:hover {
+        background-color: #FFBF66;
+        color: black;
+        border-color: #FFBF66;
+      }
+    }
+  }
+}
+
+.header-container {
+  position: relative;
+  background: url('/assets/tatis.jpg') center/cover no-repeat;
+  min-height: 100vh;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  padding-top: 160px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.center-jumbotron {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.jumbotron {
+  width: 75%;
+  margin: 0 auto;
+
+  .btn {
+    background-color: #FFBF66;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.socials-container {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+
+  .scroll {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    color: white;
+
+    .scroll-arrow {
+      font-size: 1.2rem;
+      color: white;
+      animation: upDown 2s ease-in-out infinite;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .socials {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    color: white;
+
+    i {
+      font-size: 20px;
+
+      &:hover {
+        color: #FFBF66;
+      }
+    }
+  }
+}
+
+.socials-form {
+  width: 25%;
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  align-items: center;
+
+  i {
+    font-size: 20px;
+    color: white;
+
+    &:hover {
+      color: #FFBF66;
+    }
+  }
+}
+
+.menu-logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  margin-top: 30px;
+  color: #FFBF66;
+}
+
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-navbar {
+  animation: fadeDown 1s ease-out forwards;
+}
+
+.animate-jumbotron {
+  animation: zoomIn 1.2s ease-out forwards;
+}
+
+.animate-socials {
+  animation: fadeUp 1.4s ease-out forwards;
+}
+
+
+.btn-outline-light {
+  border-color: #FFBF66;
+  color: #FFBF66;
+
+  &:hover {
+    background-color: #FFBF66;
+    color: black;
+  }
+}
+
+.btn-light {
+  background-color: #FFBF66;
+  border-color: #FFBF66;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border-color: white;
+  }
+}
+
+
+
+.divider {
+  width: 80%;
+  margin: 2rem auto;
+  border-color: #fff;
+}

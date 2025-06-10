@@ -1,0 +1,118 @@
+<section class="login-section bg-light d-flex flex-column vh-100">
+  <div class="container-fluid h-custom d-flex flex-column justify-content-center">
+    <div class="row justify-content-center align-items-center gx-3 gy-2">
+      <div class="col-12 col-sm-8 col-md-6 col-lg-5 animate-slide-in-left text-center text-md-start">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid rounded shadow"
+          alt="Login illustration"
+          id="loginImage"
+        />
+      </div>
+      <div class="col-12 col-sm-10 col-md-6 col-lg-5 animate-fade-in">
+        <div class="d-flex justify-content-center justify-content-md-start mb-3">
+          <button
+            type="button"
+            [routerLink]="['/']"
+            class="btn btn-outline-secondary"
+            aria-label="Volver al inicio"
+            style="font-size: 0.9rem; padding: 0.3rem 0.7rem;"
+          >
+            <i class="fas fa-home me-2"></i> Volver al Inicio
+          </button>
+        </div>
+
+        <form (ngSubmit)="login()">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-start gap-2 mb-2">
+            <p class="lead fw-normal mb-0 me-2" style="font-size: 0.9rem;">
+              Inicia sesión con
+            </p>
+            <button type="button" class="btn btn-dark btn-floating btn-sm">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <button type="button" class="btn btn-dark btn-floating btn-sm">
+              <i class="fab fa-twitter"></i>
+            </button>
+            <button type="button" class="btn btn-dark btn-floating btn-sm">
+              <i class="fab fa-linkedin-in"></i>
+            </button>
+          </div>
+
+          <div class="divider d-flex align-items-center my-3">
+            <p class="text-center fw-bold mx-2 mb-0" style="font-size: 0.85rem;">O</p>
+          </div>
+
+          <div class="form-outline mb-3">
+            <input
+              type="email"
+              id="formEmail"
+              [(ngModel)]="email"
+              name="email"
+              class="form-control form-control-sm"
+              placeholder="Ingresa tu email"
+            />
+            <label class="form-label" for="formEmail" style="font-size: 0.9rem;">
+              Correo Electrónico
+            </label>
+          </div>
+
+          <div class="form-outline mb-2">
+            <input
+              type="password"
+              id="formPassword"
+              [(ngModel)]="password"
+              name="password"
+              class="form-control form-control-sm"
+              placeholder="Contraseña"
+            />
+            <label class="form-label" for="formPassword" style="font-size: 0.9rem;">
+              Contraseña
+            </label>
+          </div>
+
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center mb-3" style="font-size: 0.85rem;">
+            <div class="form-check mb-2 mb-sm-0">
+              <input class="form-check-input me-2" type="checkbox" id="rememberMe" />
+              <label class="form-check-label" for="rememberMe">Recordarme</label>
+            </div>
+            <a href="#" class="text-muted">¿Olvidaste tu contraseña?</a>
+          </div>
+
+<div class="text-center text-md-start">
+  <button
+    type="submit"
+    class="btn btn-warning btn-sm text-dark px-4 py-2"
+    style="font-size: 1rem;"
+    [disabled]="loading"
+  >
+    <ng-container *ngIf="!loading">Iniciar sesión</ng-container>
+    <ng-container *ngIf="loading">
+      <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+      Cargando...
+    </ng-container>
+  </button>
+  <p class="small fw-bold mt-2 mb-0" style="font-size: 0.85rem;">
+    ¿No tienes cuenta?
+    <a [routerLink]="['/register']" class="text-danger">Regístrate</a>
+  </p>
+</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-3 px-3 px-md-5 bg-dark text-white mt-auto animate-fade-in"
+    style="font-size: 0.75rem;"
+  >
+    <div>&copy; 2025 JLeague. Todos los derechos reservados.</div>
+    <div>
+      <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-white me-3"><i class="fab fa-google"></i></a>
+      <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+</section>

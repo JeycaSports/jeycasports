@@ -1,0 +1,16 @@
+<div class="dashboard-container">
+  <app-aside-bar></app-aside-bar>
+
+  <div class="main-content">
+    <div class="dashboard-header d-flex justify-content-between align-items-center">
+      <div>
+        <h1 *ngIf="pageTitle; else bienvenida">{{ pageTitle }}</h1>
+        <ng-template #bienvenida>
+          <h1>My Dashboard</h1>
+        </ng-template>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
